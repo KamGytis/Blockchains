@@ -20,7 +20,7 @@ public class Main {
         }
 
         System.out.println("Baitu skaicius: " + data.length);
-        System.out.println("Maisa: " + computeHash(data));
+        System.out.println("Maisa: " + Hash.hash(data));
     }
 
     private static byte[] readFile(String pathText) {
@@ -32,7 +32,7 @@ public class Main {
             System.err.println("Klaida: nepavyko perskaityti failo '" + pathText + "': " + e);
         }
         System.exit(1);
-        return null; // nepasiekiama, bet kompiliatoriui reikia
+        return null;
     }
 
     private static byte[] readManual() {
@@ -50,9 +50,5 @@ public class Main {
             text += "\n";
         }
         return text.getBytes(StandardCharsets.UTF_8);
-    }
-
-    private static String computeHash(byte[] data) {
-        return "TODO (gauta " + data.length + " baitu)";
     }
 }
